@@ -17,6 +17,13 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
+config[:js_dir] = 'assets/js'
+config[:css_dir] = 'assets/css'
+config[:images_dir] = 'assets/img'
+config[:fonts_dir] = 'assets/fonts'
+
+set :slim, {format: :html5, pretty: true}
+Slim::Engine.set_options({attr_list_delims: {'(' => ')', '[' => ']', '{' => '}'}})
 
 # Reload the browser automatically whenever files change
 configure :development do
