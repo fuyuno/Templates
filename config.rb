@@ -22,7 +22,7 @@ config[:css_dir] = 'assets/css'
 config[:images_dir] = 'assets/img'
 config[:fonts_dir] = 'assets/fonts'
 
-set :slim, {format: :html5, pretty: true}
+set :slim, {format: :html, pretty: true}
 Slim::Engine.set_options({attr_list_delims: {'(' => ')', '[' => ']', '{' => '}'}})
 
 # Reload the browser automatically whenever files change
