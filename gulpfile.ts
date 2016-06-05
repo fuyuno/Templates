@@ -14,19 +14,17 @@ const imgFiles: string = "assets/images/*.{jpeg,jpg,png,svg,gif}";
 const fontFiles: string = "assets/fonts/*.{ttf,otf,wtf}";
 
 const tsProject = {
-    compilerOptions: {
-        module: "commonjs",
-        noImplicitAny: false,
-        removeComments: true,
-        preserveConstEnums: true,
-        sourceMap: false,
-    }
+    module: "commonjs",
+    noImplicitAny: false,
+    removeComments: true,
+    preserveConstEnums: true,
+    sourceMap: false
 };
 
 gulp.task("ts:compile", () => {
     return gulp.src(tsFiles)
       .pipe($.plumber())
-      // .pipe($.typescript(tsProject))
+      .pipe($.typescript(tsProject))
       // .pipe(gulp.dest("tmp/js"))
       .pipe($.webpack(webpackConfig[0]))
       .pipe(gulp.dest("source/assets/js"));
