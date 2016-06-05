@@ -4,7 +4,7 @@ const root = path.join(__dirname, "./");
 
 module.exports = [{
   entry: {
-    bundle: path.join(root, "front/javascripts/application.ts")
+    bundle: path.join(root, "assets/javascripts/application.ts")
   },
   output: {
     path: path.join(root, "source/assets/js"),
@@ -23,8 +23,8 @@ module.exports = [{
   entry: {
     bundle: [
       path.join(root, "node_modules/normalize.css/normalize.css"),
-      path.join(root, "front/stylesheets/application.scss"),
-      path.join(root, "front/stylesheets/application.js")
+      path.join(root, "assets/stylesheets/application.scss"),
+      path.join(root, "assets/stylesheets/application.js")
     ]
   },
   output: {
