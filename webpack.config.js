@@ -1,6 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const root = path.join(__dirname, "./");
+const webpack = require("webpack");
 
 module.exports = [{
   entry: {
@@ -16,9 +17,19 @@ module.exports = [{
         loader: "babel-loader?presets[]=es2015!ts-loader",
         exclude: /node_modules/,
         test: /\.ts$/,
+      },
+      {
+        loader: "babel-loader?presets[]=es2015",
+        test: /\.js$/
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: ["", ".js"]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }, {
   entry: {
     bundle: [
@@ -35,11 +46,15 @@ module.exports = [{
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize")
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize!sass-loader")
+      },
+      {
+        test: /\.jpg$/,
+        loader: "url-loader?mimetype=image/jpg"
       }
     ]
   },

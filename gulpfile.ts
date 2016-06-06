@@ -8,10 +8,10 @@ var spawn = child_process.spawn;
 import * as webpackConfig from "./webpack.config.js";
 
 const $ = load_plugins();
-const tsFiles: string = "assets/javascripts/*.ts";
-const sassFiles: string = "assets/stylesheets/*.{scss,sass}";
-const imgFiles: string = "assets/images/*.{jpeg,jpg,png,svg,gif}";
-const fontFiles: string = "assets/fonts/*.{ttf,otf,wtf}";
+const tsFiles: string = "assets/javascripts/**/*.ts";
+const sassFiles: string = "assets/stylesheets/**/*.{scss,sass}";
+const imgFiles: string = "assets/images/**/*.{jpeg,jpg,png,svg,gif}";
+const fontFiles: string = "assets/fonts/**/*.{ttf,otf,wtf}";
 
 const tsProject = {
     module: "commonjs",
