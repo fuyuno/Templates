@@ -5,12 +5,12 @@ Application templates
 
 
 ## Middleman
-Middleman templates  
+Middleman template  
 Middleman + Slim + TypeScript + Sass
 
 
 ## Electron
-Electron templates  
+Electron template  
 Electron + TypeScript + React + Redux
 
 
