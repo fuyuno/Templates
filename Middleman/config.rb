@@ -38,10 +38,19 @@ end
 helpers do
   def title
     if current_page.data.title
-      "#{current_page.data.title} | kokoiroworks"
+      "#{current_page.data.title} | Middleman"
     else
-      "kokoiroworks"
+      "Middleman"
     end
+  end
+
+  def link_to *args, &block
+    url_args_index = block_given? ? 0 : 1
+    if url = args[url_args_index]
+      agrs[url_args_index] << '.html' if !url.starts_with?('http') && !url.ends_with?('/')
+    end
+    super(*args, &block)
+  end
 end
 
 # Build-specific configuration

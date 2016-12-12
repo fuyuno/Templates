@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const devServer = "http://localhost:8080/assets/"
+      const files = ["bundle.js", "bundle.css", "style.css", "style.js"];
+      const isDevelopment = process.env.NODE_ENV === "development";
+      files.forEach(function (file) {
+        let tag = null;
+        if (file.endsWith(".js")) {
+          tag = document.createElement("script");
+          tag.src = isDevelopment ? devServer + file : file;
+          tag.async = true;
+        } else {
+          tag = document.createElement("link");
+          tag.rel = "stylesheet";
+          tag.type = "text/css";
+          tag.href = isDevelopment ? devServer + file : file;
+        }
+        document.write(tag.outerHTML);
+      }); 
+    </script>
+  </body>
+</html>

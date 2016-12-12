@@ -1,3 +1,16 @@
-# Middleman-template
-kokoiroworks.com middleman template.  
-Slim + Sass + TypeScript.
+Templates
+----
+
+Application templates
+
+
+## Middleman
+Middleman templates  
+Middleman + Slim + TypeScript + Sass
+
+
+## Electron
+Electron templates  
+Electron + TypeScript + React + Redux
+
+

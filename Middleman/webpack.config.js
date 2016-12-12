@@ -14,12 +14,12 @@ module.exports = [{
   module: {
     loaders: [
       {
-        loader: "babel-loader?presets[]=es2015!ts-loader",
+        loader: "babel?presets[]=es2015!ts",
         exclude: /node_modules/,
         test: /\.ts$/,
       },
       {
-        loader: "babel-loader?presets[]=es2015",
+        loader: "babel?presets[]=es2015",
         test: /\.js$/
       }
     ]
@@ -46,15 +46,15 @@ module.exports = [{
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize")
+        loader: ExtractTextPlugin.extract("style", "css?minimize")
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize!sass-loader")
+        loader: ExtractTextPlugin.extract("style", "css?minimize!sass")
       },
       {
         test: /\.jpg$/,
-        loader: "url-loader?mimetype=image/jpg"
+        loader: "url?mimetype=image/jpg"
       }
     ]
   },
