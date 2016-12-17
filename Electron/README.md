@@ -14,10 +14,9 @@ Electron modern application template.
   * TSLint
   * Typings
   * Webpack
-    * Enable Webpack Hot Module Replacement
+    * Webpack Hot Module Replacement
       * React Components
       * Reducers
-  * TSLint
 
 
 ## Directories
